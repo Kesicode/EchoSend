@@ -52,7 +52,6 @@ io.on('connection', (socket) => {
 });
 
 client.on('qr', (qr) => {
-    console.log('QR RECEIVED');
     qrcode.toDataURL(qr, (err, url) => {
         io.emit('qr', url);
         io.emit('log', { type: 'info', msg: 'Please scan the QR code to log in to WhatsApp.' });
@@ -60,14 +59,12 @@ client.on('qr', (qr) => {
 });
 
 client.on('ready', () => {
-    console.log('Client is ready!');
     clientReady = true;
     io.emit('ready', true);
     io.emit('log', { type: 'success', msg: 'WhatsApp Client is ready!' });
 });
 
 client.on('authenticated', () => {
-    console.log('AUTHENTICATED');
     io.emit('log', { type: 'success', msg: 'Authenticated successfully.' });
 });
 
@@ -77,7 +74,6 @@ client.on('auth_failure', msg => {
 });
 
 client.on('disconnected', (reason) => {
-    console.log('Client was logged out', reason);
     clientReady = false;
     io.emit('ready', false);
     io.emit('log', { type: 'error', msg: `Client was logged out: ${reason}` });
