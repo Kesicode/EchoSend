@@ -687,3 +687,261 @@ input:disabled, textarea:disabled {
         max-height: 400px;
     }
 }
+
+/* -------------------
+   Formatting Toolbar
+   ------------------- */
+.formatting-toolbar {
+    display: flex;
+    gap: 4px;
+}
+
+.format-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    padding: 2px 8px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.format-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text-main);
+    border-color: var(--primary);
+}
+
+.format-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* -------------------
+   Live Preview Card
+   ------------------- */
+.message-preview-container {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 12px;
+    min-height: 80px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.message-preview-bubble {
+    color: var(--text-main);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.message-preview-bubble strong {
+    font-weight: 700;
+    color: #fff;
+}
+
+.message-preview-bubble em {
+    font-style: italic;
+}
+
+.message-preview-bubble del {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.message-preview-bubble code {
+    font-family: var(--font-mono);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+/* -------------------
+   Dynamic Tags
+   ------------------- */
+.dynamic-tag-badge {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    color: var(--primary);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: var(--transition);
+    user-select: none;
+}
+
+.dynamic-tag-badge:hover {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+    transform: translateY(-1px);
+}
+
+/* -------------------
+   Contacts Table
+   ------------------- */
+.contacts-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.contacts-table th {
+    position: sticky;
+    top: 0;
+    background: #090d1a; /* Solid dark background matching the mesh-theme background */
+    z-index: 10;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--glass-border);
+    padding: 14px 16px;
+}
+
+.contacts-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+.contacts-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.contacts-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.contacts-table tbody tr.skipped {
+    opacity: 0.35;
+}
+
+.contacts-table tbody tr.skipped td {
+    text-decoration: line-through;
+    color: var(--text-muted) !important;
+}
+
+.contacts-table input[type="checkbox"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+    vertical-align: middle;
+}
+
+.table-scroll-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px; /* Thicker horizontal scrollbar */
+}
+.table-scroll-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+.table-scroll-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25); /* High-contrast white */
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.table-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: var(--primary); /* Emerald color highlight on hover */
+}
+
+/* -------------------
+   Control Buttons
+   ------------------- */
+.control-btn {
+    transition: var(--transition);
+}
+.control-btn:hover {
+    transform: translateY(-1px);
+}
+.warning-btn {
+    background: var(--warning);
+    color: #020617;
+}
+.warning-btn:hover {
+    background: #d97706;
+}
+.success-btn {
+    background: var(--success);
+    color: white;
+}
+.success-btn:hover {
+    background: var(--primary-hover);
+}
+.danger-btn {
+    background: var(--danger);
+}
+.danger-btn:hover {
+    background: #dc2626;
+}
+
+.delay-inputs-row input[type="number"] {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
+    border-radius: 6px;
+    color: white;
+    font-size: 0.9rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+.delay-inputs-row input[type="number"]:focus {
+    border-color: var(--primary);
+}
+
+/* -------------------
+   Attachment List
+   ------------------- */
+.attachment-list-container {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    animation: slideUpItem 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.attachment-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.attachment-list-item-left {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    overflow: hidden;
+}
+
+.attachment-list-item-label {
+    color: var(--primary);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.attachment-list-item-name {
+    color: var(--text-main);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
